@@ -7,7 +7,7 @@ the program capabilities:
 https://drive.google.com/file/d/1N1uBtxdvWi3pLbsjTWJYRlPOgPWmvSR6
 
 **Installation**  
-The program works on any platform, supporting the standard Java,
+The program can be used on any platform, supporting the standard Java,
 e.g. Windows, macOS, Linux.  
 To run the program you need JRE (1.8 and up), that can be installed at
 https://www.java.com/en/download/manual.jsp
@@ -49,7 +49,7 @@ Run:
 and select coc as your screensaver
 
 **MacOS**  
-**to do ...**
+Not feasible.
 
 **Windows**  
 **to do ...**
@@ -69,7 +69,7 @@ Unfortunately it was not without issues:
 1. The window size is hard-coded.
 2. I was not able to build the project in IntelliJ. I also was not able to build using Maven 
 because of a nonstandard file structure.
-3. The program eventually goes into an indefinite loop without showing time.
+3. The program eventually goes into an infinite loop without showing time.
 4. The code is not really OO.
 5. The whole code is heavily dependent on Swing. I'd like to see it split so that UI part is separated 
 from the algorithm. Then it will be easier to port it, say, to Android.  

@@ -7,23 +7,38 @@ the program capabilities:
 https://drive.google.com/file/d/1N1uBtxdvWi3pLbsjTWJYRlPOgPWmvSR6
 
 **Installation**  
-The program can be used on any platform, supporting the standard Java,
+The program can be used on any platform supporting the standard Java,
 e.g. Windows, macOS, Linux.  
 To run the program you need JRE (1.8 and up), that can be installed at
 https://www.java.com/en/download/manual.jsp
 
 The program can be found here:  
-https://github.com/ab-chesspad/coc/raw/refs/heads/main/target/coc.jar
+https://github.com/ab-chesspad/coc/raw/refs/heads/main/target/coc.jar  
 
-**Launch**  
+Android version is here:
+https://github.com/ab-chesspad/coc/raw/refs/heads/main/  
+
+It runs on Android phones, Android and Google TVs and boxes.  
+
+**Launch Java program**  
 To launch the program open Terminal (cmd.com on Windows) and type:  
 **java -jar \<path to coc.jar file> [--root]**  
 When the optional parameter '--root' is specified, the program runs in the 
 full screen mode.
 
 **Usage**  
-Mouse right-click pops up the configuration screen. 
-It works in WYSIWYG mode, and all options are self-explanatory.  
+Mouse right-click pops up the configuration screen. Depending on the
+currently selected options, some parameters become disabled.
+The program has four fixed themes and one custom theme. Fixed themes:  
+**BL** - black hands, light bg, no dials;  
+**BLL** - black hands, light bg, light dials;  
+**GD** - gold hands, dark bg, no dials;  
+**WDD** - white hands, dark bg, dark dials;  
+
+**Custom** - most parameters are for this theme. It is recommended to
+disable all fixed themes while configuring the custom one. This way
+the user immediately sees all selected options in WYSIWYG mode.  
+
 Mouse left-click closes the program.
 
 **Using as screensaver**  
@@ -72,9 +87,11 @@ because of a nonstandard file structure.
 3. The program eventually goes into an infinite loop without showing time.
 4. The code is not really OO.
 5. The whole code is heavily dependent on Swing. I'd like to see it split so that UI part is separated 
-from the algorithm. Then it will be easier to port it, say, to Android.  
+from the algorithm. Then it will be easier to port it 
+to other platforms, e.g. Android.  
 
-I posted an issue, but the author did not respond. So here is my own implementation,
-free of these defects.  
+I posted an issue, but the author did not respond. 
+So here is my own implementation,
+free of these defects, with a broad set of options.  
   
 Enjoy!

@@ -62,7 +62,6 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         LinearLayout mainLayout = new LinearLayout(this);
         mainLayout.setPadding(0,0,0,0);
-
         mainLayout.setOrientation(LinearLayout.HORIZONTAL);
         LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -80,6 +79,10 @@ public class MainActivity extends Activity {
                     WindowManager.LayoutParams.FLAG_FULLSCREEN
             );
         }
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
+                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+        );
 
         new DUtil(this);    // need this to be able to use config()
         mainSize = new Pair<>(Resources.getSystem().getDisplayMetrics().widthPixels,

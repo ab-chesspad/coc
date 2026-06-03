@@ -41,6 +41,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.ContextThemeWrapper;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -254,6 +255,7 @@ public class ConfigDialog extends Dialog {
         cancelButton.setOnClickListener(v -> {
             Log.d(MainActivity.DEBUG_TAG, "ConfigDialog, cancel");
             DConfig.refresh();
+            Animator.getInstance().refresh(DConfig.getInstance());
             ConfigDialog.this.dismiss();
         });
         llp = new LinearLayout.LayoutParams(0, lineHeight, 1f);
@@ -268,7 +270,7 @@ public class ConfigDialog extends Dialog {
     }
 
     private Button createButton(int text) {
-        Button button = new Button(context);
+        Button button = new Button(new ContextThemeWrapper(context, android.R.style.Theme_Light));
         button.setLayoutParams(new LinearLayout.LayoutParams(dlgWidth / 5, buttonHeight));
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
         button.setText(text);
@@ -314,8 +316,7 @@ public class ConfigDialog extends Dialog {
         label.setTextColor(Color.BLACK);
         label.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
         label.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        label.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        label.setGravity(Gravity.BOTTOM);
+        label.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
         label.setText(text);
         LayoutParams rlp = new LayoutParams(LayoutParams.MATCH_PARENT, lineHeight);
         rlp.addRule(RelativeLayout.BELOW, prevId);

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-sdk tools:overrideLibrary="androidx.activity,androidx.activity.ktx,androidx.annotation.experimental,androidx.appcompat,androidx.appcompat.resources,androidx.arch.core,androidx.cardview,androidx.constraintlayout.widget,androidx.coordinatorlayout,androidx.core,androidx.core.ktx,androidx.core.viewtree,androidx.cursoradapter,androidx.customview,androidx.documentfile,androidx.drawerlayout,androidx.dynamicanimation,androidx.emoji2,androidx.emoji2.viewsintegration,androidx.fragment,androidx.fragment.ktx,androidx.graphics.shapes,androidx.interpolator,androidx.legacy.coreutils,androidx.lifecycle.ktx,androidx.lifecycle.lifecycle.viewmodel.anchor,androidx.lifecycle.livedata,androidx.lifecycle.livedata.core,androidx.lifecycle.livedata.core.ktx,androidx.lifecycle.process,androidx.lifecycle.runtime,androidx.lifecycle.viewmodel,androidx.lifecycle.viewmodel.ktx,androidx.lifecycle.viewmodel.savedstate,androidx.loader,androidx.localbroadcastmanager,androidx.navigation,androidx.navigation.common,androidx.navigation.fragment,androidx.navigation.ui,androidx.print,androidx.profileinstaller,androidx.recyclerview,androidx.savedstate,androidx.savedstate.ktx,androidx.slidingpanelayout,androidx.startup,androidx.test.annotation,androidx.test.core,androidx.test.espresso.core,androidx.test.espresso.idling.resource,androidx.test.ext.junit,androidx.test.monitor,androidx.test.runner,androidx.test.services.storage,androidx.tracing,androidx.transition,androidx.vectordrawable,androidx.vectordrawable.animated,androidx.versionedparcelable,androidx.viewbinding,androidx.viewpager,androidx.viewpager2,androidx.window,com.google.android.material" />
+
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
@@ -16,6 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:ignore="MissingTvBanner">
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -98,7 +98,7 @@ public class Picker extends LinearLayout {
         positionLabel.setSingleLine();
         positionLabel.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         positionLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX, config.fontSize);
-        positionLabel.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+        positionLabel.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
         positionLabel.setGravity(Gravity.CENTER_VERTICAL);
         positionLabel.setBackgroundColor(getBgColor());
         LinearLayout.LayoutParams positionLlp = new LinearLayout.LayoutParams(
@@ -169,13 +169,13 @@ public class Picker extends LinearLayout {
 
     public void invalidate() {
         super.invalidate();
-        pickerView.invalidate();
+        if (pickerView != null) pickerView.invalidate();
     }
 
     @Override
     public void onDraw(Canvas canvas) {
         Log.d(DEBUG_TAG, Picker.this + ", onDraw");
-        pickerView.invalidate();
+        if (pickerView != null) pickerView.invalidate();
     }
 
     public View getFocusView() {
